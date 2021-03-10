@@ -4,6 +4,16 @@ function compute()
     var rate = document.getElementById("rate").value;
     var years = document.getElementById("years").value;
     var interest = principal * years * rate / 100;
-    console.log(years);
+    document.getElementById("result").innerText  = `
+    If you deposit ${principal},
+    at an interest rate of ${rate}.
+    You will receive an amount of ${principal + interest},
+    in the year ${years}
+    `
 }
-compute();
+
+function rateChange(){
+    document.getElementById("rateValue").innerHTML = `${document.getElementById("rate").value} %` ;
+}
+
+
