@@ -1,15 +1,12 @@
 
 function compute()
 {
-    if(document.getElementById("principal").value > 0)
-    {
-        var principal = document.getElementById("principal").value
-
+    var principal = document.getElementById('principal').value;
+    if (isNaN(parseInt(principal)) || parseInt(principal) <= 0) {
+        alert("Enter a positive number");
+        document.getElementById('principal').focus();
+        return;
     }
-    else{
-        return alert("Enter a positive number");
-    }
-
     var rate = document.getElementById("rate").value;
     var years = Number(document.getElementById("years").value);
     var totalYears = Number(new Date().getFullYear()) + years;
